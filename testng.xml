@@ -1,0 +1,62 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <parameter name="browser" value="chrome" />
+    <test name="Regression Test in chrome">
+        <classes>
+            <class name="tests.AddReviewTest">
+                <methods>
+                    <include name="searchForProduct" />
+                    <include name="addReview" />
+                </methods>
+            </class>
+            <class name="tests.AddToCartTest">
+                <methods>
+                    <include name="searchForProduct" />
+                    <include name="addFirstProductToCart" />
+                    <include name="searchForSecondProduct"/>
+                    <include name="addSecondProductToCart"/>
+                </methods>
+            </class>
+            <class name="tests.AddToWishListTest">
+                <methods>
+                    <include name="navigateToRegisterPage" />
+                    <include name="enterRegisterData" />
+                    <include name="navigateToProduct" />
+                    <include name="addProductToWishList" />
+                </methods>
+            </class>
+            <class name="tests.CheckOuTest">
+                <methods>
+                    <include name="navigateToRegisterPage" />
+                    <include name="enterRegisterData" />
+                    <include name="searchForSecondProduct"/>
+                    <include name="addSecondProductToCart"/>
+                    <include name="navigateAndEnterAddressDetails"/>
+                    <include name="completeCheckOut"/>
+                </methods>
+            </class>
+            <class name="tests.LoginTest">
+                <methods>
+                    <include name="navigateToRegisterPage" />
+                    <include name="enterRegisterData" />
+                    <include name="logOutAndNavigateToLogin" />
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="tests.RegisterTest">
+                <methods>
+                    <include name="navigateToRegisterPage" />
+                    <include name="enterRegisterData" />
+                </methods>
+            </class>
+            <class name="tests.UpdateCartTest">
+                <methods>
+                    <include name="searchForProduct" />
+                    <include name="addFirstProductToCart"/>
+                    <include name="updateQuantity"/>
+                    <include name="deleteItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
